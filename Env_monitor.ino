@@ -18,11 +18,15 @@ void loop() {
     delay(100);
     digitalWrite(LED_M,LOW);
     delay(100);
-    Serial.print("Moisture percentage= ");Serial.print(moisture_percentage);Serial.print("%");Serial.print("High mositure level detected\n");
+    Serial.print("Moisture percentage= ");
+    Serial.print(moisture_percentage);
+    Serial.print("%");
+    Serial.print("High mositure level detected\n");
   }
 
   else{
-    Serial.print("\nMoisture Value=");Serial.print(moistValue);
+    Serial.print("\nMoisture Value=");
+    Serial.print(moistValue);
     Serial.print("Moisture percentage= ");
     Serial.print(moisture_percentage);
     Serial.print("%");
@@ -34,11 +38,16 @@ void loop() {
     delay(100);
     digitalWrite(LED_M,LOW);
     delay(100);
-    Serial.print("\nTemperature=");Serial.print(temp_reading);Serial.print("C");Serial.print("\nCaution,high temperature");
+    Serial.print("\nTemperature=");
+    Serial.print(temp_reading);
+    Serial.print("C");
+    Serial.print("\nCaution,high temperature");
   }
   else{
     digitalWrite(LED_T,LOW);
-    Serial.print("\nTemperature=");Serial.print(temp_reading);Serial.print("C");
+    Serial.print("\nTemperature=");
+    Serial.print(temp_reading);
+    Serial.print("C");
   }
 
   //gas sensor
@@ -48,12 +57,16 @@ void loop() {
     delay(100);
     digitalWrite(LED_G,LOW);
     delay(100);;
-    Serial.print("\n");Serial.print(gas_sensor);Serial.print("\nHigh gas level detected");
+    Serial.print("\n");
+    Serial.print(gas_sensor);
+    Serial.print("\nHigh gas level detected");
   }
 
   else{
     digitalWrite(LED_G,LOW);
-    Serial.print("\n");Serial.print("Gas level detected=");Serial.print(gas_sensor);
+    Serial.print("\n");
+    Serial.print("Gas level detected=");
+    Serial.print(gas_sensor);
   }
   delay(1000);
 }
