@@ -19,22 +19,22 @@ void setup() {
 }
 
 void loop() {
-  // **Lid Movement Based on PIR Sensor**
+  //Lid Movement Based on PIR Sensor
   if (digitalRead(PIR)==HIGH) {
-    motor.write(45);  // Open lid
+    motor.write(45);  //Open lid
     delay(500);
   } else {
-    motor.write(0);   // Close lid
+    motor.write(0);   //Close lid
   }
 
-  // **Check Trash Level**
+  //Check Trash Level
   digitalWrite(TRIG_FULL,LOW);
-  delayMicroseconds(2);
+  delay(2);
   digitalWrite(TRIG_FULL,HIGH);
-  delayMicroseconds(10);
+  delay(10);
   digitalWrite(TRIG_FULL,LOW);
 
-  long duration = pulseIn(ECHO_FULL,HIGH,30000);  // Timeout at 30ms (~5m range)
+  long duration = pulseIn(ECHO_FULL,HIGH);
   int distance=(duration*0.034)/2;  // Convert to cm
   
   Serial.print("Space left: ");
@@ -47,7 +47,7 @@ void loop() {
     if (distance<10) {
       digitalWrite(RED,HIGH);
       digitalWrite(BUZ,HIGH);
-      delay(500);//Short buzz,avoids blocking
+      delay(500);
     } else if (distance<=30&&distance>=10) {
       digitalWrite(RED,LOW);
       delay(500);
@@ -56,5 +56,5 @@ void loop() {
       digitalWrite(RED,LOW);
     }
   }
-  delay(100);//Short delay to stabilize readings
+  delay(100);
 }
